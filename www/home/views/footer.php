@@ -1,0 +1,190 @@
+<?php
+if ( permissions_has_permission($u_rol , "comments" , "read") && $a == "details" ) {
+    echo "<h3>" . _tr("Internal chat") . "</h3>" ;
+    
+    message('info', 'This chat is internal to the company, it is not shown to customers or printed on documents');
+    
+    include view("comments" , "comments") ;
+}
+
+echo '<a name="comments"></a>'; 
+
+if ( permissions_has_permission($u_rol , "comments" , "create") && $a == "details" ) {
+    //include view("comments" , "modalCommentsUpdate") ;
+    
+    include view("comments", "formCommentsUpdate"); 
+    
+}
+
+
+// logs
+if ( permissions_has_permission($u_rol , "logs" , "read") && $a == "details" ) {
+    echo "<h2>" . _tr("Logs") . "</h2>" ;
+    include view("logs" , "logs") ;
+}
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+?> 
+
+<hr>
+
+<br>
+
+<?php 
+/*
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            
+            
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    <?php _t("Web"); ?>
+                </a>
+                <a href="#" class="list-group-item">
+                    Web Version: 
+                </a>
+                <a href="#" class="list-group-item">
+                    DB Version: 80
+                </a>
+                <a href="#" class="list-group-item">
+                    Tr version: 
+                </a>
+                <a href="#" class="list-group-item">
+                    Last update: 
+                </a>
+            </div>
+            
+            
+        </div>
+
+
+
+    </div>
+</div>*/
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php // logo();    ?>
+
+
+
+<?php 
+/*<?php # ----------------------------   ?>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5f1193f67258dc118bee6e42/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+
+<?php # ------------------------------  ?>*/
+?>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+
+<?php
+# busqueda en vivo en un select
+# https://developer.snapappointments.com/bootstrap-select/examples/#live-search
+/* <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+
+  <script src="includes/jquery/3-4-1/jquery-3-4-1-min.js" type="text/javascript"></script>
+
+
+
+
+  <script src="includes/chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="includes/chosen/chosen.jquery.js" type="text/javascript"></script>
+  <script src="includes/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+  <script src="includes/chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ */
+?>
+
+
+<script>
+    function showPasswordNp() {
+        var x = document.getElementById("np");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+    function showPasswordRp() {
+        var x = document.getElementById("rp");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+<?php 
+// esto me permite desactivar botones al enviar 
+// poner id = btn_send
+// <button type="submit" id="btn_send" class="btn btn-default">Send</button>
+?>
+        <script>
+            function disableButton() {
+                var btn = document.getElementById('btn_send');
+                btn.disabled = true;
+                btn.innerText = 'Sending.....'
+            }
+        </script>
+
+</body>
+</html>

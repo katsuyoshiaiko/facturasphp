@@ -1,0 +1,1 @@
+<?php _t("Extended"); ?>

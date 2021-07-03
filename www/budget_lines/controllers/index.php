@@ -1,0 +1,18 @@
+<?php
+
+if (!permissions_has_permission($u_rol, $c, "read")) {
+    header("Location: index.php?c=home&a=no_access");
+    die("Error has permission ");
+}
+
+
+
+$error = array();
+$budget_lines = null;
+$budget_lines = budget_lines_list(10, 5);
+    
+//include "www/budget_lines/views/index.php";
+include view("budget_lines", "index");  
+if ($debug) {
+    include "www/budget_lines/views/debug.php";
+}
